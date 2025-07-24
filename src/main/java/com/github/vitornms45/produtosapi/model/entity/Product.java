@@ -1,14 +1,26 @@
 package com.github.vitornms45.produtosapi.model.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 //POJO -> Plain Old Java Object
-
+@Entity
+@Table(name = "Product")
 public class Product {
 
+    @Column(nullable = false)
     private String name;
+
+    @Column
     private String description;
+
+    @Id
+    @Column(unique = true, nullable = false)
     private String id;
+
+    @Column
     private Double price;
 
 
