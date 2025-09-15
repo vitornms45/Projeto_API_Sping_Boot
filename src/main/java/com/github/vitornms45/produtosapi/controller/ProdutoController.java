@@ -5,8 +5,11 @@ import com.github.vitornms45.produtosapi.repository.entity.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.UUID;
+import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("produtos")
 public class ProdutoController {
@@ -15,6 +18,11 @@ public class ProdutoController {
 
     public ProdutoController(ProdutoRepository produtoRepository) {
         this.produtoRepository = produtoRepository;
+    }
+
+    @GetMapping
+    public List<Product> listarTodos() {
+        return produtoRepository.findAll();
     }
 
     @PostMapping()

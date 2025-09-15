@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Cleanup;
 
 //POJO -> Plain Old Java Object
 @Entity
@@ -22,6 +23,9 @@ public class Product {
 
     @Column
     private Double price;
+
+    @Column
+    private String imageUrl;
 
 
     public String getName() {
@@ -56,6 +60,14 @@ public class Product {
         this.price = price;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -63,6 +75,7 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", id='" + id + '\'' +
                 ", price=" + price +
+                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
 }
