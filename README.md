@@ -1,4 +1,4 @@
-Segue um exemplo de documentação para sua API, considerando os campos atuais (`name`, `description`, `id`, `price`, `imageUrl`). Salve como `README.md` na raiz do projeto.
+
 
 ```markdown
 # Produtos API
